@@ -1,6 +1,6 @@
 # chatty
 
-A new Flutter project.
+Slicing UI Design To Flutter
 
 ## Getting Started
 
