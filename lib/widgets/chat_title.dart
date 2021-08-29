@@ -1,3 +1,5 @@
+import 'package:chatty/pages/message_page.dart';
+
 import '/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -21,41 +23,51 @@ class ChatTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          ClipOval(
-            child: Image.asset(
-              imageUrl,
-              height: 55,
-              width: 55,
-              fit: BoxFit.contain,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MessagePage(),
             ),
-          ),
-          SizedBox(
-            width: 12,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                name,
-                style: titleTextStyle,
+          );
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            ClipOval(
+              child: Image.asset(
+                imageUrl,
+                height: 55,
+                width: 55,
+                fit: BoxFit.contain,
               ),
-              Text(
-                text,
-                style: unread
-                    ? subtitleTextStyle.copyWith(color: txtDarkBlueColor)
-                    : subtitleTextStyle,
-              ),
-            ],
-          ),
-          Spacer(),
-          Text(
-            time,
-            style: subtitleTextStyle,
-          ),
-        ],
+            ),
+            SizedBox(
+              width: 12,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  name,
+                  style: titleTextStyle,
+                ),
+                Text(
+                  text,
+                  style: unread
+                      ? subtitleTextStyle.copyWith(color: txtDarkBlueColor)
+                      : subtitleTextStyle,
+                ),
+              ],
+            ),
+            Spacer(),
+            Text(
+              time,
+              style: subtitleTextStyle,
+            ),
+          ],
+        ),
       ),
     );
   }
