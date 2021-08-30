@@ -24,6 +24,12 @@ TextStyle subheaderTextStyle = TextStyle(
   fontSize: 16,
 );
 
+TextStyle messageTextStyle = TextStyle(
+  color: txtGreyBlueColor,
+  fontWeight: FontWeight.w300,
+  fontSize: 16,
+);
+
 TextStyle titleTextStyle = TextStyle(
   color: txtDarkBlueColor,
   fontWeight: FontWeight.w500,

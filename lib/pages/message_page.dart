@@ -100,7 +100,8 @@ class MessagePage extends StatelessWidget {
                             ),
                             SenderBubble(
                               imageUrl: 'assets/profile/profile.jpg',
-                              text: 'Thinking about how to deal with this client from hell...',
+                              text:
+                                  'Thinking about how to deal with this client from hell...',
                               time: '08:52',
                             ),
                             ReceiverBubble(
@@ -119,6 +120,75 @@ class MessagePage extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: whiteColor,
+                      borderRadius: BorderRadius.circular(75),
+                    ),
+                    child: SafeArea(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              padding: EdgeInsets.only(left: 30),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        hintText: "Type message",
+                                        border: InputBorder.none,
+                                      ),
+                                    ),
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: () {},
+                                    child: Icon(Icons.send,
+                                        color: txtGreyBlueColor),
+                                    style: ElevatedButton.styleFrom(
+                                        fixedSize: Size(35, 35),
+                                        shape: CircleBorder(),
+                                        padding: EdgeInsets.all(2),
+                                        primary: bubbleColor),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    // child: Row(
+                    //   mainAxisAlignment: MainAxisAlignment.end,
+                    //   children: [
+                    //     Expanded(
+                    //       child: TextField(
+                    //         decoration: InputDecoration(
+                    //           hintText: "Type message",
+                    //           border: InputBorder.none,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     ElevatedButton(
+                    //       onPressed: () {},
+                    //       child: Icon(Icons.send, color: txtGreyBlueColor),
+                    //       style: ElevatedButton.styleFrom(
+                    //           fixedSize: Size(35, 35),
+                    //           shape: CircleBorder(),
+                    //           padding: EdgeInsets.all(2),
+                    //           primary: bubbleColor),
+                    //     ),
+                    //   ],
+                    // ),
+                  )
+                ],
               )
             ],
           ),
