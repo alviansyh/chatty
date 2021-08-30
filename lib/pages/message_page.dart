@@ -1,6 +1,9 @@
-import 'package:animations/animations.dart';
+import 'package:chatty/widgets/sender_bubble.dart';
 
+import '/widgets/receiver_bubble.dart';
 import '/theme.dart';
+
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
 class MessagePage extends StatelessWidget {
@@ -16,7 +19,7 @@ class MessagePage extends StatelessWidget {
         child: child,
       ),
       child: Scaffold(
-        backgroundColor: secondaryColor,
+        backgroundColor: systemMessageColor,
         body: SafeArea(
           child: Column(
             children: [
@@ -72,7 +75,48 @@ class MessagePage extends StatelessWidget {
               Expanded(
                 child: Container(
                   child: ListView(
-                    children: [],
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 30),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 30,
+                            ),
+                            ReceiverBubble(
+                              imageUrl: 'assets/profile/image 6.png',
+                              text: 'Morning team',
+                              time: '08:45',
+                            ),
+                            ReceiverBubble(
+                              imageUrl: 'assets/profile/image 6.png',
+                              text: 'How are ya guys?',
+                              time: '08:46',
+                            ),
+                            ReceiverBubble(
+                              imageUrl: 'assets/profile/image 8.png',
+                              text: 'Find here :P',
+                              time: '08:50',
+                            ),
+                            SenderBubble(
+                              imageUrl: 'assets/profile/profile.jpg',
+                              text: 'Thinking about how to deal with this client from hell...',
+                              time: '08:52',
+                            ),
+                            ReceiverBubble(
+                              imageUrl: 'assets/profile/image 4.png',
+                              text: 'Love them',
+                              time: '08:53',
+                            ),
+                            SenderBubble(
+                              imageUrl: 'assets/profile/profile.jpg',
+                              text: 'Don\'t forget meeting at 2 PM guys',
+                              time: '08:54',
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 ),
               )

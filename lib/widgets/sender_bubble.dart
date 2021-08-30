@@ -29,7 +29,7 @@ class SenderBubble extends StatelessWidget {
               vertical: 12,
             ),
             decoration: BoxDecoration(
-              color: whiteColor,
+              color: bubbleColor,
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(20),
                 topLeft: Radius.circular(20),
@@ -39,9 +39,12 @@ class SenderBubble extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  text,
-                  style: chatTitleTextStyle,
+                Container(
+                  width: MediaQuery.of(context).size.width - 155,
+                  child: Text(
+                    text,
+                    style: chatTitleTextStyle,
+                  ),
                 ),
                 SizedBox(
                   height: 5,

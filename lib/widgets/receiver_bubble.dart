@@ -39,7 +39,7 @@ class ReceiverBubble extends StatelessWidget {
               vertical: 12,
             ),
             decoration: BoxDecoration(
-              color: secondaryColor,
+              color: bubbleColor,
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(20),
                 topLeft: Radius.circular(20),
@@ -49,9 +49,12 @@ class ReceiverBubble extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  text,
-                  style: chatTitleTextStyle,
+                Container(
+                  width: MediaQuery.of(context).size.width - 155,
+                  child: Text(
+                    text,
+                    style: chatTitleTextStyle,
+                  ),
                 ),
                 SizedBox(
                   height: 5,
